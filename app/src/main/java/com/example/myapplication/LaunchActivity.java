@@ -17,11 +17,12 @@ public class LaunchActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         SharedPreferences sharedPref =
                 getSharedPreferences( getString( R.string.preference_file_key ), Context.MODE_PRIVATE );
-
         if(sharedPref.contains(TOKEN_KEY)){
-            //TODO go to MainActivity
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }else{
-            //TODO go to LoginActivity
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }
     }
 }
